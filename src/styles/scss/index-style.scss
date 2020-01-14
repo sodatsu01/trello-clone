@@ -8,7 +8,10 @@ body{
     margin: 20px;
     width: 70px;
     height: 70px;
-    filter: drop-shadow(5px 5px 5px)
+    filter: drop-shadow(5px 5px 5px);
+  }
+  .logo:hover{
+    transform: scale(1.10) rotate(-10deg);
   }
 }
 .board{
@@ -40,6 +43,9 @@ $card-height: 150px;
   border-radius: 10px;
     background: #FFFFFF;
   }
+}
+.card:hover{
+  transform: scale(1.10);
 }
 .card-content{
   display: inline-block;
