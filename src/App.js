@@ -1,8 +1,6 @@
 import React from 'react';
 import './styles/index-style.css';
-
-import Header from './components/header';
-import Board from './components/board';
+import BoardIndex from './components/boardindex'
 
 /**
  * react app
@@ -10,8 +8,7 @@ import Board from './components/board';
  */
 function App() {
   return (
-    <Header />
-    <Board />
+    <BoardIndex />
   );
 }
 
