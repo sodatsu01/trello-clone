@@ -12,6 +12,7 @@ body{
   }
 }
 .board{
+  display: inline;
   margin: 20px;
 }
 $card-width: 300px;
@@ -43,8 +44,9 @@ $card-height: 150px;
 .card-content{
   display: inline-block;
   position: absolute;
-  width: 100%;
   top: 50%;
+  width: 100%;
+  margin-top: 0px;
   transform: translate(-50%, -50%);
   font-size: 18px;
   font-weight: 700;
