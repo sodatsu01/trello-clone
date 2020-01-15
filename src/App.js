@@ -1,6 +1,8 @@
 import React from 'react';
-import './styles/index-style.css';
+import {BrowserRouter, Route, Switch, Link} from 'react-router-dom';
+import './app.css'
 import BoardIndex from './components/boardindex';
+import BoardDetail from './components/boarddetail';
 
 /**
  * react app
@@ -8,7 +10,12 @@ import BoardIndex from './components/boardindex';
  */
 function App() {
   return (
-    <BoardIndex />
+    <BrowserRouter>
+      <Switch>
+        <Route exact path='/'><BoardIndex /></Route>
+        <Route path='/board/:id'><BoardDetail /></Route>
+      </Switch>
+    </BrowserRouter>
   );
 }
 
