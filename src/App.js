@@ -1,6 +1,7 @@
 import React from 'react';
 import {BrowserRouter, Route, Switch, Link} from 'react-router-dom';
-import './app.css'
+import './styles/app.css'
+import Header from './components/header';
 import BoardIndex from './components/boardindex';
 import BoardDetail from './components/boarddetail';
 
@@ -10,12 +11,15 @@ import BoardDetail from './components/boarddetail';
  */
 function App() {
   return (
-    <BrowserRouter>
-      <Switch>
-        <Route exact path='/'><BoardIndex /></Route>
-        <Route path='/board/:id'><BoardDetail /></Route>
-      </Switch>
-    </BrowserRouter>
+    <div>
+      <Header />
+      <BrowserRouter>
+        <Switch>
+          <Route exact path='/boards'><BoardIndex /></Route>
+          <Route path='/board/:id'><BoardDetail /></Route>
+        </Switch>
+      </BrowserRouter>
+    </div>
   );
 }
 

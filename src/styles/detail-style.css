@@ -1,0 +1,54 @@
+.body {
+  background-color: #F4F4F5; }
+
+.header {
+  display: block;
+  text-align: center; }
+  .header .logo {
+    margin: 20px;
+    width: 70px;
+    height: 70px;
+    filter: drop-shadow(5px 5px 5px); }
+
+.boardDetail {
+  margin: 20px; }
+  .boardDetail .boardTitle {
+    display: inline-block;
+    border-radius: 5px;
+    background-color: #9FE7A4;
+    color: #FFF;
+    text-shadow: 0px 0px 3px #000;
+    padding: 10px 60px 10px 60px;
+    font-size: 20px;
+    text-align: center; }
+  .boardDetail .taskGroup {
+    vertical-align: top;
+    display: inline-block;
+    margin: 20px;
+    width: 255px;
+    background: #FFF;
+    border-radius: 5px;
+    box-shadow: 0px 3px 6px; }
+    .boardDetail .taskGroup .groupName {
+      padding: 10px;
+      text-align: center;
+      font-size: 15px; }
+    .boardDetail .taskGroup .newTask {
+      margin: 10px;
+      width: 225px;
+      box-shadow: 0px 3px 3px;
+      padding: 5px;
+      font-size: 20px;
+      border-radius: 5px; }
+    .boardDetail .taskGroup .taskCard {
+      background-color: #9FE7A4;
+      color: #000;
+      margin: 10px;
+      padding: 5px;
+      width: 225px;
+      box-shadow: 0px 3px 3px;
+      font-size: 20px;
+      text-align: center;
+      border-radius: 5px; }
+
+/*# sourceMappingURL=detail-style.css.map */

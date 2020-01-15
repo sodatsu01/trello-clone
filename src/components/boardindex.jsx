@@ -1,13 +1,10 @@
 import React from 'react'
 import Board from './board/board'
-import Header from './header'
+import '../styles/index-style.css'
 
 function BoardIndex(props){
   return(
-    <div>
-      <Header />
-      <Board />
-    </div>
+    <Board />
   )
 }
 
