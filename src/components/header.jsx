@@ -1,5 +1,5 @@
 import React from 'react';
-import logo from '../assets/logo.svg'
+import logo from '../assets/logo.svg';
 
 function Header(props) {
   return (
@@ -8,4 +8,4 @@ function Header(props) {
     </div>
   );
 }
-export default Header
+export default Header;

@@ -1,8 +1,13 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 function TaskCard(props) {
-  return(
+  return (
     <h3 className="taskCard">{props.name}</h3>
-  )
+  );
 }
-export default TaskCard
+
+TaskCard.propTypes = {
+  name: PropTypes.string,
+};
+export default TaskCard;

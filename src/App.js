@@ -1,6 +1,6 @@
 import React from 'react';
 import {BrowserRouter, Route, Switch, Link} from 'react-router-dom';
-import './styles/app.css'
+import './styles/app.css';
 import Header from './components/header';
 import BoardIndex from './components/boardindex';
 import BoardDetail from './components/boarddetail';

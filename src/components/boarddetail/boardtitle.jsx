@@ -1,11 +1,15 @@
-import React from 'react'
+import React from 'react';
+import PropTypes from 'prop-types';
 
-function BoardTitle(props){
-  return(
+function BoardTitle(props) {
+  return (
     <div>
-      <h2 class="boardTitle">{props.title}</h2>
+      <h2 className="boardTitle">{props.title}</h2>
     </div>
-  )
+  );
 }
 
-export default BoardTitle
+BoardTitle.propTypes = {
+  title: PropTypes.string,
+};
+export default BoardTitle;
