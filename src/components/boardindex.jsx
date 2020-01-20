@@ -1,10 +1,11 @@
 import React from 'react';
-import Board from './board/board';
+import BoardContainer from './board/boardcontainer';
 import '../styles/index-style.css';
+import {Store} from './store';
 
 function BoardIndex(props) {
   return (
-    <Board />
+    <BoardContainer />
   );
 }
 
