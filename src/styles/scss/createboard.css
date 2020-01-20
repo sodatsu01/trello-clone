@@ -36,8 +36,10 @@
       filter: drop-shadow(5px 5px 3px); }
     .creating-card .body .cancel {
       display: inline-block;
-      font-weight: bold;
-      margin: 30px 10px 0px 60px;
+      margin: 30px 20px 0px 80px;
+      border: 0px;
+      padding: 0px;
+      background-color: #9FE7A4;
       text-shadow: 0px 0px 3px #000; }
     .creating-card .body .submit {
       width: 100px;

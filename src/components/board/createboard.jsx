@@ -1,7 +1,12 @@
 import React from 'react';
 import '../../styles/createboard.css';
+import {Store} from '../store';
 
 function CreateBoard(props){
+  const {state, dispatch} = React.useContext(Store);
+  const clickCancel = () => dispatch({
+    type: 'CLICK_CANCEL',
+  })
   return(
  <session class="creating-card">
    <article class="header">
@@ -11,7 +16,7 @@ function CreateBoard(props){
      <h3 class="input-label">what shall we call the board?</h3>
      <form action="" method="post">
        <input class="input-board-name" type="text"/>
-         <input class="cancel" type="button" value="cancel"/>
+       <button className="cancel" onClick={() => clickCancel()}>cancel</button>
          <input class="submit" type="button" value="CREATE"/>
      </form>
    </article>

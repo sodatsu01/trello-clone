@@ -40,8 +40,10 @@
     }
     .cancel{
       display: inline-block;
-      font-weight: bold;
-      margin:30px 10px 0px 60px;
+      margin:30px 20px 0px 80px;
+      border: 0px;
+      padding: 0px;
+      background-color: #9FE7A4;
       text-shadow: 0px 0px 3px #000;
     }
     .submit{

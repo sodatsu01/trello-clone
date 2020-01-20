@@ -1,6 +1,7 @@
 import React from 'react';
 import BoardCard from './boardcard';
 import CreateBoard from './createboard';
+import NewBoardCard from './newboardcard';
 import {Store} from '../store';
 
 function BoardContainer(props) {
@@ -10,7 +11,7 @@ function BoardContainer(props) {
     {id: 2, name: 'hoge'},
   ];
   const showNewBoardCard = () => {
-    return state.isOpen ? <CreateBoard /> : <BoardCard new={true} />
+    return state.isOpen ? <CreateBoard /> : <NewBoardCard/>
   }
   return (
     <React.Fragment>

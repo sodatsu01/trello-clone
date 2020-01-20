@@ -2,7 +2,7 @@ import React from 'react';
 
 export const Store = React.createContext();
 const initialState = {
-  isOpen: true, //local stateにしたい
+  isOpen: false, //local stateにしたい
   boards: [],
 }
 
@@ -11,6 +11,8 @@ function reducer(state, action){
     case 'FETCH_BOARDS':
       return{...state, boards: {id: 1, name: 'test'}};
     case 'CLICK_NEW_BOARD':
+      return {...state, isOpen: !state.isOpen};
+    case 'CLICK_CANCEL':
       return {...state, isOpen: !state.isOpen};
     default:
       return state;
