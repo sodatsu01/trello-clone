@@ -2,14 +2,14 @@ import React from 'react';
 
 export const Store = React.createContext();
 const initialState = {
-  isOpen: false, //local stateにしたい
+  isOpen: false, // local stateにしたい
   boards: [],
-}
+};
 
-function reducer(state, action){
+function reducer(state, action) {
   switch (action.type) {
     case 'FETCH_BOARDS':
-      return{...state, boards: {id: 1, name: 'test'}};
+      return {...state, boards: action.payload};
     case 'CLICK_NEW_BOARD':
       return {...state, isOpen: !state.isOpen};
     case 'CLICK_CANCEL':
@@ -19,8 +19,8 @@ function reducer(state, action){
   }
 }
 
-export function StoreProvider(props){
+export function StoreProvider(props) {
   const [state, dispatch] = React.useReducer(reducer, initialState);
-  const value = {state, dispatch}
-  return <Store.Provider value={value}>{props.children}</Store.Provider> 
+  const value = {state, dispatch};
+  return <Store.Provider value={value}>{props.children}</Store.Provider>;
 }

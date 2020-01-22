@@ -1,7 +1,6 @@
 import React from 'react';
 import BoardContainer from './board/boardcontainer';
 import '../styles/index-style.css';
-import {Store} from './store';
 
 function BoardIndex(props) {
   return (

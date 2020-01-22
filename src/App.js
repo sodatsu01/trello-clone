@@ -1,5 +1,5 @@
 import React from 'react';
-import {BrowserRouter, Route, Switch, Link} from 'react-router-dom';
+import {Router, Link} from '@reach/router';
 import './styles/app.css';
 import Header from './components/header';
 import BoardIndex from './components/boardindex';
@@ -13,12 +13,10 @@ function App() {
   return (
     <div>
       <Header />
-      <BrowserRouter>
-        <Switch>
-          <Route exact path='/boards'><BoardIndex /></Route>
-          <Route path='/board/:id'><BoardDetail /></Route>
-        </Switch>
-      </BrowserRouter>
+      <Router>
+        <BoardIndex path="/" />
+        <BoardDetail path="/board/:id" />
+      </ Router>
     </div>
   );
 }

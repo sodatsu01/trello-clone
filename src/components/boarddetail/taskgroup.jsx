@@ -12,5 +12,8 @@ function TaskGroup(props) {
     </section>
   );
 }
+TaskGroup.propTypes = {
+  name: PropTypes.string,
+}
 
 export default TaskGroup;
