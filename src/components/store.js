@@ -14,6 +14,8 @@ function reducer(state, action) {
       return {...state, isOpen: !state.isOpen};
     case 'CLICK_CANCEL':
       return {...state, isOpen: !state.isOpen};
+    case 'CREATE_BOARD':
+      return {...state, isOpen: !state.isOpen, boards: [...state.boards, action.payload]};
     default:
       return state;
   }

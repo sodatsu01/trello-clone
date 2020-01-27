@@ -2,27 +2,56 @@ import React from 'react';
 import '../../styles/createboard.css';
 import {Store} from '../store';
 
+const API_URL = process.env.REACT_APP_API_URL;
+
 function CreateBoard(props) {
-  const {dispatch} = React.useContext(Store);
+  const {state, dispatch} = React.useContext(Store);
+  const [name, setName] = React.useState("");
+
   const clickCancel = () => dispatch({
     type: 'CLICK_CANCEL',
   });
+
+  const clickCreate = async (e) => {
+    // console.log("start create button")
+    const id = state.boards.length && (state.boards.slice(-1)[0].id) + 1;
+    const data = {id: id, name: name}
+    const url = new URL("boards", API_URL)
+    await fetch(url, {
+      method: "POST",
+      mode: "cors",
+      body: JSON.stringify(data),
+      headers: {
+        "Content-Type": "application/json"
+      }
+    })
+    // ホントはここでpostの結果によるエラー処理
+    await dispatch({
+      type: 'CREATE_BOARD',
+      payload: data,
+    })
+  }
   return (
-    <session className="creating-card">
-      <article className="header">
+    <section className="creating-card">
+      <section className="header">
         <h2 className="title">Creating a board</h2>
-      </article>
-      <article className="body">
+      </section>
+      <section className="body">
         <h3 className="input-label">what shall we call the board?</h3>
-        <form action="" method="post">
-          <input className="input-board-name" type="text"/>
+        <form>
+          <input 
+            className="input-board-name" 
+            type="text" 
+            value={name}
+            onChange={(e) => {setName(e.target.value)}}
+          />
           <button className="cancel" onClick={() => clickCancel()}>
             cancel
           </button>
-          <input className="submit" type="button" value="CREATE"/>
+          <input className="submit" type="submit" value="CREATE" onClick={() => clickCreate()}/>
         </form>
-      </article>
-    </session>
+      </section>
+    </section>
   );
 }
 
