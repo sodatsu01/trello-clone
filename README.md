@@ -7,7 +7,7 @@
 4. `yarn start`
 
 ## 学習したスキル
-- React
+- React Hooks
 - reach/router
 - fetch API
 - Sass
