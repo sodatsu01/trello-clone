@@ -13,8 +13,7 @@ function CreateBoard(props) {
   });
 
   const clickCreate = async (e) => {
-    // console.log("start create button")
-    const id = state.boards.length && (state.boards.slice(-1)[0].id) + 1;
+    const id = state.boards.length + 1
     const data = {id: id, name: name}
     const url = new URL("boards", API_URL)
     await fetch(url, {

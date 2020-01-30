@@ -2,8 +2,11 @@ import React from 'react';
 
 export const Store = React.createContext();
 const initialState = {
-  isOpen: false, // local stateにしたい
+  isOpen: false, 
   boards: [],
+  currentBoard: {},
+  taskGroups: [],
+  tasks: []
 };
 
 function reducer(state, action) {
@@ -16,6 +19,16 @@ function reducer(state, action) {
       return {...state, isOpen: !state.isOpen};
     case 'CREATE_BOARD':
       return {...state, isOpen: !state.isOpen, boards: [...state.boards, action.payload]};
+    case 'SET_CURRENT_BOARD':
+      return {...state, currentBoard: action.payload};
+    case 'FETCH_TASK_GROUPS':
+      return {...state, taskGroups: action.payload};
+    case 'CREATE_TASK_GROUP':
+      return {...state, taskGroups: [...state.taskGroups, action.payload]};
+    case 'FETCH_TASKS':
+      return {...state, tasks: action.payload};
+    case 'CREATE_TASK':
+      return {...state, tasks: [...state.tasks, action.payload]};
     default:
       return state;
   }

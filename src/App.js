@@ -14,8 +14,8 @@ function App() {
     <div>
       <Header />
       <Router>
-        <BoardIndex path="/" />
-        <BoardDetail path="/board/:id" />
+        <BoardIndex path="boards" />
+        <BoardDetail path="boards/:boardId" />
       </ Router>
     </div>
   );

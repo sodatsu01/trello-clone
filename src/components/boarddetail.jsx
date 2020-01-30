@@ -1,16 +1,12 @@
 import React from 'react';
 import BoardTitle from './boarddetail/boardtitle';
 import TaskGroup from './boarddetail/taskgroup';
+import BoardDetailContainer from './boarddetail/boarddetailcontainer';
 import '../styles/detail-style.css';
 
 function BoardDetail(props) {
   return (
-    <div className="boardDetail">
-      <BoardTitle title="props.board.title" />
-      <section className="taskGroupsContainer">
-        <TaskGroup name="props.taskGroup" />
-      </section>
-    </div>
+    <BoardDetailContainer boardId={props.boardId} />
   );
 }
 

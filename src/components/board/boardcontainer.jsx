@@ -11,13 +11,11 @@ function BoardContainer(props) {
 
   React.useEffect(() => {
     state.boards.length === 0 && fetchBoardAction();
-    // state.boards.length && console.log(state.boards.slice(-1)[0].id)
   })
 
   const {boards} = state;
 
   const fetchBoardAction = async () =>{
-    // [{"id":1,"name":"test","task_groups":"1,2"},{"id":2,"name":"hoge","task_groups":3}]/
     const url = new URL("boards", API_URL)
     const data = await fetch(url);
     const dataJSON = await data.json();
@@ -32,10 +30,10 @@ function BoardContainer(props) {
   };
 
   return (
-      <div tabindex="-1" className="board" role="group">
+      <div className="board">
         {showNewBoardCard()}
         {boards.map((board)=>{
-          return <BoardCard key={board.id} new={false} boardName={board.name}/>;
+          return <BoardCard key={board.id} id={board.id} new={false} boardName={board.name}/>;
         })}
       </div>
   );

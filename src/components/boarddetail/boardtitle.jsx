@@ -1,10 +1,13 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import {Store} from '../store';
+
 
 function BoardTitle(props) {
+  const {state, dispatch} = React.useContext(Store);
   return (
     <div>
-      <h2 className="boardTitle">{props.title}</h2>
+      <h2 className="boardTitle">{state.currentBoard.name}</h2>
     </div>
   );
 }
