@@ -3,32 +3,20 @@
     {
       "id": 1,
       "name": "test-board"
-    },
-    {
-      "id": 2,
-      "name": "test-board2"
-    },
-    {
-      "id": 3,
-      "name": "test3"
-    },
-    {
-      "id": 4,
-      "name": "test4"
     }
   ],
   "taskgroups": [
     {
       "id": 1,
       "name": "test-taskgroup",
-      "boardId": 1
+      "boardId": "1"
     }
   ],
   "tasks": [
     {
       "id": 1,
-      "name": "test-task",
-      "taskgroupId": 1
+      "name": "test",
+      "taskGroupId": 1
     }
   ]
 }
