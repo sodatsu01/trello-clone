@@ -4,7 +4,7 @@ import {Store} from '../store';
 
 
 function BoardTitle(props) {
-  const {state, dispatch} = React.useContext(Store);
+  const {state} = React.useContext(Store);
   return (
     <div>
       <h2 className="boardTitle">{state.currentBoard.name}</h2>

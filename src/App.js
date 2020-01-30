@@ -1,5 +1,5 @@
 import React from 'react';
-import {Router, Link} from '@reach/router';
+import {Router} from '@reach/router';
 import './styles/app.css';
 import Header from './components/header';
 import BoardIndex from './components/boardindex';

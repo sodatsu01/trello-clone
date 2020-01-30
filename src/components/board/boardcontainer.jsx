@@ -11,31 +11,35 @@ function BoardContainer(props) {
 
   React.useEffect(() => {
     state.boards.length === 0 && fetchBoardAction();
-  })
+  });
 
   const {boards} = state;
 
   const fetchBoardAction = async () =>{
-    const url = new URL("boards", API_URL)
+    const url = new URL('boards', API_URL);
     const data = await fetch(url);
     const dataJSON = await data.json();
     return dispatch({
       type: 'FETCH_BOARDS',
-      payload: dataJSON
-    })
-  }
+      payload: dataJSON,
+    });
+  };
 
   const showNewBoardCard = () => {
     return state.isOpen ? <CreateBoard /> : <NewBoardCard />;
   };
 
   return (
-      <div className="board">
-        {showNewBoardCard()}
-        {boards.map((board)=>{
-          return <BoardCard key={board.id} id={board.id} new={false} boardName={board.name}/>;
-        })}
-      </div>
+    <div className="board">
+      {showNewBoardCard()}
+      {boards.map((board)=>{
+        return <BoardCard
+          key={board.id}
+          id={board.id}
+          new={false}
+          boardName={board.name}/>;
+      })}
+    </div>
   );
 }
 

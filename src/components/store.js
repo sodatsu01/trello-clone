@@ -2,11 +2,11 @@ import React from 'react';
 
 export const Store = React.createContext();
 const initialState = {
-  isOpen: false, 
+  isOpen: false,
   boards: [],
   currentBoard: {},
   taskGroups: [],
-  tasks: []
+  tasks: [],
 };
 
 function reducer(state, action) {
@@ -18,7 +18,10 @@ function reducer(state, action) {
     case 'CLICK_CANCEL':
       return {...state, isOpen: !state.isOpen};
     case 'CREATE_BOARD':
-      return {...state, isOpen: !state.isOpen, boards: [...state.boards, action.payload]};
+      return {
+        ...state,
+        isOpen: !state.isOpen,
+        boards: [...state.boards, action.payload]};
     case 'SET_CURRENT_BOARD':
       return {...state, currentBoard: action.payload};
     case 'FETCH_TASK_GROUPS':

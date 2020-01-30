@@ -5,30 +5,31 @@ import {Store} from '../store';
 
 function BoardCard(props) {
   const {state, dispatch} = React.useContext(Store);
-  const {id} = props
+  const {id} = props;
   const board = state.boards.find(
-    b => b.id === id
-  )
+      (b) => b.id === id,
+  );
 
   return (
-    <Link 
-      className="card" 
+    <Link
+      className="card"
       to={`/boards/${id}`}
       onClick={() => {
         return dispatch({
           type: 'SET_CURRENT_BOARD',
-          payload: board
-        })
+          payload: board,
+        });
       }}
     >
       <section className="created">
         <h3 className="card-content">{props.boardName}</h3>
-    </section>
-  </Link>
-);
+      </section>
+    </Link>
+  );
 }
 
 BoardCard.propTypes = {
+  id: PropTypes.number,
   boardName: PropTypes.string,
 };
 export default BoardCard;
