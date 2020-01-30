@@ -13,6 +13,7 @@ function CreateTaskGroup(props) {
     const {boardId} = props;
     const data = {id: id, name: name, boardId: boardId};
     const url = new URL('taskgroups', API_URL);
+    e.target.newTaskGroupName.value = '';
     await fetch(url, {
       method: 'POST',
       mode: 'cors',

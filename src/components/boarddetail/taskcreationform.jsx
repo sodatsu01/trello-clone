@@ -13,6 +13,7 @@ function TaskCreationForm(props) {
     const {taskGroupId}= props;
     const data = {id: id, name: name, taskGroupId: taskGroupId};
     const url = new URL('tasks', API_URL);
+    e.target.newTaskName.value = '';
     await fetch(url, {
       method: 'POST',
       mode: 'cors',
