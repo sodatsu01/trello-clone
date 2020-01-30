@@ -5,7 +5,7 @@ import {Link} from '@reach/router';
 function Header(props) {
   return (
     <div className="header">
-      <Link to='/'>
+      <Link to='/boards'>
         <img className="logo" src={logo} alt="" />
       </Link>
     </div>
